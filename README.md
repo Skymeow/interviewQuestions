@@ -62,12 +62,66 @@ def is_palindrome(input_string):
 
 ##### . Once you have the row / column dimensions, write 2 for loops that traverse the entire matrix. In the inner for loop, use a temporary variable to make the swap.
 
+### Q: reverse the order of column elements:
+
+```
+def flip_vertical_axis(matrix):
+    r = len(matrix)-1
+    c = len(matrix[0])-1
+    i=0
+    temp=0
+    while i<=r:
+        j=0
+        while j<=c/2:
+            temp = matrix[i][j]
+            matrix[i][j] = matrix[i][c-j]
+            matrix[i][c-j] = temp
+            j=j+1
+        i=i+1
+      
+```
+
+### Q: reverse the order of rows elements:
+
+```
+def flip_vertical_axis(matrix):
+    r = len(matrix)-1
+    c = len(matrix[0])-1
+    i=0
+    temp=0
+    while i<=r/2:
+        j=0
+        while j<=c:
+            temp = matrix[i][j]
+            matrix[i][j] = matrix[r-i][j]
+            matrix[r-i][j] = temp
+            j=j+1
+        i=i+1
+
+```
+
 ### Int to binary:
 
 ```
 def dec_to_bin(number):
    return dec_to_bin(number/2) + str(number%2) if number > 1 else str(number)
+```
 
+### `list.sort()`has no return value, instead it has the side effect that the instance of list that it was called on will be sorted after the method has finished
+
+### `sorted(list)`leaves the argument unchanged and instead creates and returns a list consisting of the same elements as the argument that you passed to it
+
+### find duplicate number in sorted list
+
+```
+def duplicate_items(list_numbers):
+    duplicate = []
+    list_numbers.sort()
+    length = len(list_numbers)
+    for i in range(0, length-1):
+        if list_numbers[i] == list_numbers[i+1]:
+            duplicate.append(list_numbers[i])
+    return duplicate
 ```
 
 
