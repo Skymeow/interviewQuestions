@@ -78,10 +78,15 @@ def flip_vertical_axis(matrix):
             matrix[i][c-j] = temp
             j=j+1
         i=i+1
-      
 ```
 
 ### Q: reverse the order of rows elements:
+
+\(Flip it
+
+**in-place**
+
+along its horizontal axis.\)
 
 ```
 def flip_vertical_axis(matrix):
@@ -97,7 +102,6 @@ def flip_vertical_axis(matrix):
             matrix[r-i][j] = temp
             j=j+1
         i=i+1
-
 ```
 
 ### Int to binary:
@@ -122,6 +126,19 @@ def duplicate_items(list_numbers):
         if list_numbers[i] == list_numbers[i+1]:
             duplicate.append(list_numbers[i])
     return duplicate
+```
+
+### check if characters unique in string
+
+```
+def unique_chars_in_string(input_string):
+    if not input_string:
+        return True
+    else:
+        char_set = set()
+        for char in input_string:
+            char_set.add(char)
+        return len(char_set)==len(input_string)
 ```
 
 
