@@ -117,6 +117,8 @@ def dec_to_bin(number):
 
 ### find duplicate number in sorted list
 
+#### set\(iterablelist\)
+
 ```
 def duplicate_items(list_numbers):
     duplicate = []
@@ -139,6 +141,38 @@ def unique_chars_in_string(input_string):
         for char in input_string:
             char_set.add(char)
         return len(char_set)==len(input_string)
+```
+
+### Bubble sort:
+
+```
+def bubble_sort(a_list):
+    for i in range(len(a_list)):
+        for j in range(0, len(a_list)-i-1):
+            if a_list[j] > a_list[j+1]:
+                temp = a_list[j+1]
+                a_list[j+1] = a_list[j]
+                a_list[j] = temp
+    return a_list
+                
+```
+
+#### optimized by stopping the algorithm if inner loop didn’t cause any swap:
+
+```
+def bubble_sort(a_list):
+    swaped = False
+    for i in range(len(a_list)):
+        for j in range(0, len(a_list)-i-1):
+            if a_list[j] > a_list[j+1]:
+                temp = a_list[j+1]
+                a_list[j+1] = a_list[j]
+                a_list[j] = temp
+                swaped = True
+        if swaped == False:
+            break
+    return a_list
+
 ```
 
 
