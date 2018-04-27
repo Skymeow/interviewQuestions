@@ -12,7 +12,7 @@ A solution set is:
 ]
 ```
 
-solution: 
+solution:
 
 ```
 class Solution:
@@ -43,6 +43,19 @@ class Solution:
         outter_arr.append(inner_arr)
         return outter_arr
 ```
+
+### get the nth element from back of a list:
+
+list\[-n\]
+
+### Palindrom
+
+1\) Find reverse of string  
+2\) Check if reverse and original are same or not.
+
+| `# function which return reverse of a stringdefreverse(s):returns[::-1]defisPalindrome(s):# Calling reverse functionrev=reverse(s)# Checking if both string are equal or notif(s==rev):returnTruereturnFalse` |
+| :--- |
+
 
 
 

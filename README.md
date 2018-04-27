@@ -62,6 +62,22 @@ def is_palindrome(input_string):
 
 ##### . Once you have the row / column dimensions, write 2 for loops that traverse the entire matrix. In the inner for loop, use a temporary variable to make the swap.
 
+```
+def flip_axis(matrix):
+    r = len(matrix) - 1
+    c = len(matrix[0]) - 1
+    i=0
+    temp=0
+    while i<=r:
+        j=0
+        while i<j<=c:
+            temp = matrix[i][j]
+            matrix[i][j] = matrix[i][c-j]
+            matrix[i][c-j] = temp
+            j=j+1
+        i=i+1
+```
+
 ### Q: reverse the order of column elements:
 
 ```
@@ -186,7 +202,6 @@ def Insert(head, data):
             current = current.next
         current.next = Node(data)
     return head
-
 ```
 
 ### Reverse a singly linkedlist
@@ -206,11 +221,11 @@ class SinglyLinkedList:
     #constructor
     def __init__(self):
         self.head = None
-        
+
     #method for setting the head of the Linked List
     def setHead(self,head):
         self.head = head
-                      
+
     def reverse(self):
         prev = None
         current = self.head
@@ -226,60 +241,60 @@ class SinglyLinkedList:
 
 ```
 class Node:
- 
+
     # Constructor to initialize the node object
     def __init__(self, data):
         self.data = data
         self.next = None
- 
+
 class LinkedList:
- 
+
     # Function to initialize head
     def __init__(self):
         self.head = None
- 
- 
+
+
     def reverseUtil(self, curr, prev):
-         
+
         # If last node mark it head
         if curr.next is None :
             self.head = curr 
-             
+
             # Update next to prev node
             curr.next = prev
             return
-         
+
         # Save curr.next node for recursive call
         next = curr.next
- 
+
         # And update next 
         curr.next = prev
-     
+
         self.reverseUtil(next, curr) 
- 
- 
+
+
     # This function mainly calls reverseUtil()
     # with previous as None
     def reverse(self):
         if self.head is None:
             return
         self.reverseUtil(self.head, None)
- 
- 
+
+
     # Function to insert a new node at the beginning
     def push(self, new_data):
         new_node = Node(new_data)
         new_node.next = self.head
         self.head = new_node
- 
+
     # Utility function to print the linked LinkedList
     def printList(self):
         temp = self.head
         while(temp):
             print temp.data,
             temp = temp.next
- 
- 
+
+
 # Driver program
 llist = LinkedList()
 llist.push(8)
@@ -290,12 +305,12 @@ llist.push(4)
 llist.push(3)
 llist.push(2)
 llist.push(1)
- 
+
 print "Given linked list"
 llist.printList()
- 
+
 llist.reverse()
- 
+
 print "\nReverse linked list"
 llist.printList()
 ```
@@ -311,14 +326,13 @@ class Range(object):
     def __init__(self):
         self.lower_bound = -1
         self.upper_bound = -1
-    
+
     def __init__(self,lower_bound,upper_bound):
         self.lower_bound = lower_bound
         self.upper_bound = upper_bound
- 
+
     def __str__(self):
         return "["+str(self.lower_bound)+","+str(self.upper_bound)+"]"
-
 ```
 
 #### solution:
