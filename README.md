@@ -350,7 +350,31 @@ def max_gain(input_list):
                 check = gain - min
         else:
             min = input_list[i+1]
-    return gain  
+    return gain
+```
+
+Find the leaf nodes in binary tree:
+
+```
+# Python program to count leaf nodes in Binary Tree
+ 
+# A Binary tree node
+class Node:
+     
+    # Constructor to create a new node
+    def __init__(self, data):
+        self.data = data 
+        self.left = None
+        self.right = None
+ 
+# Function to get the count of leaf nodes in binary tree
+def getLeafCount(node):
+    if node is None:
+        return 0
+    if(node.left is None and node.right is None):
+        return 1
+    else:
+        return getLeafCount(node.left) + getLeafCount(node.right)
 ```
 
 
