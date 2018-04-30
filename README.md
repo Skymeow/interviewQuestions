@@ -335,10 +335,22 @@ class Range(object):
         return "["+str(self.lower_bound)+","+str(self.upper_bound)+"]"
 ```
 
-#### solution:
+#### Find biggest gain:
 
 ```
-
+def max_gain(input_list):
+    gain = 0
+    min = 0
+    check = 0
+    for i in range(0, len(input_list)-2):
+        if input_list[i] < input_list[i+1]:
+            if check < input_list[i+1] - input_list[i]:
+                gain = input_list[i+1]
+                min = input_list[i]
+                check = gain - min
+        else:
+            min = input_list[i+1]
+    return gain  
 ```
 
 
