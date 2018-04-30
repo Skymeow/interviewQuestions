@@ -392,5 +392,30 @@ def better_fibonacci(n):
     return n1
 ```
 
+### Level traverse a binary tree iteratively
+
+```
+class BinaryTree:
+    def __init__(self, root_node = None):
+            self.root = root_node
+    
+    # Required collection modules have already been imported. 
+    def number_of_full_nodes(self,root):
+        queue = deque()
+        queue.append(root)
+        count = 0
+        if root == None:
+            return 0
+        while len(queue) > 0:
+            node = queue.popleft()
+            if node.left_child:
+                queue.append(node.left_child)
+            if node.right_child:
+                queue.append(node.right_child)
+            if node.left_child and node.right_child:
+                count += 1
+        return count
+```
+
 
 
