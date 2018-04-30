@@ -357,16 +357,16 @@ Find the leaf nodes in binary tree:
 
 ```
 # Python program to count leaf nodes in Binary Tree
- 
+
 # A Binary tree node
 class Node:
-     
+
     # Constructor to create a new node
     def __init__(self, data):
         self.data = data 
         self.left = None
         self.right = None
- 
+
 # Function to get the count of leaf nodes in binary tree
 def getLeafCount(node):
     if node is None:
@@ -375,6 +375,21 @@ def getLeafCount(node):
         return 1
     else:
         return getLeafCount(node.left) + getLeafCount(node.right)
+```
+
+```
+def better_fibonacci(n):
+    n2 = 0
+    n1 = 1
+    if n == 0:
+        return n2
+    elif n == 1:
+        return n1
+    for i in range(2, n+1):
+        temp = n1 + n2
+        n2 = n1
+        n1 = temp
+    return n1
 ```
 
 
