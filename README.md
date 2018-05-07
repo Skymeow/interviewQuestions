@@ -1,4 +1,4 @@
-interviewQuestions
+### interviewQuestions
 
 ### What would be the time complexity of a method that uses the`binary search algorithm`to check if an integer exists in a sorted list?
 
@@ -398,7 +398,7 @@ def better_fibonacci(n):
 class BinaryTree:
     def __init__(self, root_node = None):
             self.root = root_node
-    
+
     # Required collection modules have already been imported. 
     def number_of_full_nodes(self,root):
         queue = deque()
@@ -415,6 +415,67 @@ class BinaryTree:
             if node.left_child and node.right_child:
                 count += 1
         return count
+```
+
+### print path\(DFS recursively\)
+
+```
+def print_paths(board):
+   output = []
+   temp = []
+   row = len(board)-1
+   col = len(board[0])-1
+
+   solution = helper(0, 0, board, output, temp, (row, col))
+   return solution
+
+def helper(i, j, board, output, temp, dim):
+    if dim[0] < 0 or dim[1] < 0:
+        return ['Empty']
+    if dim[0] == 0 and dim[1] == 0:
+        return board[0]
+    if i>dim[0] or j>dim[1]:
+        return
+
+    if i == dim[0] and j == dim[1]:
+        item = board[i][j]
+        temp.append(item)
+        path = "".join(temp)
+        output.append(path)
+        return output
+    else:
+        item = board[i][j]
+        temp.append(item)
+        original = temp[:]  # Current path
+        helper(i,j+1,board,output,temp, dim)
+        temp = original
+        helper(i+1,j,board,output,temp, dim)
+        return output
+```
+
+optimized:
+
+```
+def print_paths(board):
+    output_list = []
+    temp_str_list = []
+    search(0,0,board,temp_str_list,output_list)
+    return output_list    
+
+def search(i,j,board,temp_str_list,output_list):
+    rows = len(board)
+    cols = len(board[0])
+    if i > rows - 1 or j > cols -1:
+        return
+    temp_str_list.append(board[i][j])
+    if i == rows - 1 and j == cols - 1:
+        output_list.append("".join(temp_str_list))
+        temp_str_list.pop()
+        return
+  
+    search(i+1,j,board,temp_str_list,output_list); # Search Down
+    search(i,j+1,board,temp_str_list,output_list); # Search Right
+    temp_str_list.pop() # Un-Mark
 ```
 
 
